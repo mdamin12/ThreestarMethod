@@ -15,10 +15,53 @@ public class MethodPractice {
 		
 		System.out.println("Q no-14: "+getFizzBuzz(21));
 		
+		int[] numberArray ={ 20,40,10,60,80,25};
+		System.out.println("Q no-15: "+getMaxNumber(numberArray));
+		
+		int[] numberArrayTwo ={40,50,90,15,30,25};
+		System.out.println("Q no-16:"+ getMinNumber(numberArrayTwo));
 		
 		
 		
 		
+		
+	}
+	/**
+	 * Q no:16
+	 * write a method that take one number array input and return the min number
+	 * parameter:int[] numberArray
+	 * returnType:int
+	 * ServinGbucket:variable
+	 */
+	public static int getMinNumber(int[] numberArray){
+		int minNumber = numberArray[0];
+		
+		for(int i = 0; i < numberArray.length;i++){
+			
+			if(minNumber > numberArray[i]){
+				minNumber = numberArray[i];
+			}
+		}
+		return minNumber;
+	}
+	/**
+	 * Q no:15
+	 * write a method that take one number array input and return the max number
+	 * parameter:int[] numberArray
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getMaxNumber(int[] numberArray){
+		int maxNumber = numberArray[0]; 
+		
+		for(int i = 0; i < numberArray.length;i++){
+		
+		if(maxNumber < numberArray[i]){
+			maxNumber = numberArray[i];
+		}
+		}
+		
+		return maxNumber;
 	}
 	/**
 	 * Q no:14
