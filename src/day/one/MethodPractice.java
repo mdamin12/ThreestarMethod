@@ -21,10 +21,42 @@ public class MethodPractice {
 		int[] numberArrayTwo ={40,50,90,15,30,25};
 		System.out.println("Q no-16:"+ getMinNumber(numberArrayTwo));
 		
+		System.out.println("Q no-17:"+getConvertedString(20));
+		
+		System.out.println("Q no-18:"+getTextValue("30"));
 		
 		
 		
 		
+		
+	}
+	/**
+	 * Q no:18
+	 * write a method that take one String representation of number input and return the same value as a integer
+	 * parameter:String number
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getTextValue(String number){
+		int textValue = 0;
+		
+		textValue = Integer.valueOf(number);
+		
+		return textValue;
+	}
+	/**
+	 * Q no:17
+	 * write a method that take one number input and return the same value as a String
+	 * parameter:int number
+	 * returnType:String
+	 * ServingBucket:variable
+	 */
+	public static String getConvertedString(int number){
+		String text = null;
+		
+		text = String.valueOf(number);
+		
+		return text;
 	}
 	/**
 	 * Q no:16
