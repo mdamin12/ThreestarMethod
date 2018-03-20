@@ -29,10 +29,30 @@ public class MethodPractice {
 		
 		System.out.println("Q no-20:"+getSum("this is a String"));
 		
+		System.out.println("Q no-21:"+getLastFiveChar("This is a String"));
 		
 		
 		
 		
+		
+		
+	}
+	/**
+	 * Q no:21
+	 * write a method that take one String input and return a list of last Five Character
+	 * parameter:String text
+	 * returnType:ArrayList<Character>
+	 * ServingBucket:List
+	 */
+	public static ArrayList<Character> getLastFiveChar(String text){
+		ArrayList<Character> charList = new ArrayList<Character>();
+		
+		for(int i = text.length()-5; i < text.length();i++){
+			charList.add(text.charAt(i));
+		}
+		
+		
+		return charList;
 	}
 	/**
 	 * Q no:20
