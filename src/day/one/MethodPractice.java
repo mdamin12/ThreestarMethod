@@ -1,5 +1,6 @@
 package day.one;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MethodPractice {
@@ -10,9 +11,51 @@ public class MethodPractice {
 		
 		System.out.println("Q no-12:" +Arrays.toString(getNumb(20)));
 		
+		System.out.println("Q no-13: "+getNumberList(20));
+		
+		System.out.println("Q no-14: "+getFizzBuzz(21));
+		
+		
+		
 		
 		
 	}
+	/**
+	 * Q no:14
+	 * write a method that take one number input and return 'fizz' if the given number divided by 5 and return 'buzz'
+	 * if the given number divided by 5 && 3 otherwise return 'fizz buzz'
+	 * parameter:int number
+	 * returntype:String
+	 * ServingBucket:variable
+	 */
+	public static String getFizzBuzz(int number){
+		String message = null;
+		
+		if(number % 5 == 0 && number % 3 == 0){
+			message = "buzz";
+		}else if(number % 5 == 0){
+			message = "fizz";
+		}else{
+			message = "fizz buzz";
+		}
+		return message;
+	}
+	/**
+	 * Q no:13
+	 * write a method that take one number input and return a number list starting from 0 to that given number
+	 * parameter:int number
+	 * returnType:ArrayList<Integer>
+	 * ServinGbucket:List
+	 */
+	public static ArrayList<Integer> getNumberList(int number){
+		ArrayList<Integer> numberList = new ArrayList<Integer>();
+		
+		for(int i = 0; i <= number; i++){
+			numberList.add(i);
+		}
+		return numberList;
+	}
+
 	/**
 	 * Q no:12
 	 * write a method that take one number input and return an Array that contains 1 to given number
@@ -21,9 +64,9 @@ public class MethodPractice {
 	 * ServingBucket:variable
 	 */
 	public static int[] getNumb(int number){
-		int[] numArray = new int[number+1];
+		int[] numArray = new int[number];
 		
-		for(int i = 0; i <= number; i++){
+		for(int i = 1; i <= number; i++){
 			numArray[i-1] = i;
 		}
 		return numArray;
