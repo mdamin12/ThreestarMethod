@@ -25,11 +25,47 @@ public class MethodPractice {
 		
 		System.out.println("Q no-18:"+getTextValue("30"));
 		
+		System.out.println("Q no-19:"+getChar("This is a String"));
+		
+		System.out.println("Q no-20:"+getSum("this is a String"));
+		
 		
 		
 		
 		
 	}
+	/**
+	 * Q no:20
+	 * write a method that take a one String input and return the sum of all index
+	 * parameter:String text
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getSum(String text){
+		int sum = 0;
+		
+		for(int i = 0; i < text.length(); i++){
+			sum = sum+i;
+		}
+		return sum;
+	}
+	/**
+	 * Q no:19
+	 * write a method that String input and return true if it contains char 'a' otherwise return false
+	 * parameter:String text
+	 * returnTYpe:boolean
+	 * ServingBucket: variable
+	 */
+	public static boolean getChar(String text){
+		boolean result = false;
+		
+		text = text.toLowerCase();
+		
+		result = text.contains("a");
+		
+		return result;
+	}
+	
 	/**
 	 * Q no:18
 	 * write a method that take one String representation of number input and return the same value as a integer
