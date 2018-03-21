@@ -35,11 +35,30 @@ public class MethodPractice {
 		
 		System.out.println("Q no-23:"+ getFifthToTenthChar("This is a String"));
 		
+		System.out.println("Q no-24:"+ getWord("This is a String"));
 		
 		
 		
 		
 		
+		
+	}
+	/**
+	 * Q no:24
+	 * write a method that take one String input and return a list of all word 
+	 * parameter:String text
+	 * returnType:ArrayList<String>
+	 * ServingBucket:list
+	 */
+	public static ArrayList<String> getWord(String text){
+		ArrayList<String> wordList = new ArrayList<String>();
+		
+		String[] wordArray = text.split(" ");
+		
+		for(int i = 0; i < wordArray.length; i++){
+			wordList.add(wordArray[i]);
+		}
+		return wordList;
 	}
 	/**
 	 * Q no:23
