@@ -31,11 +31,44 @@ public class MethodPractice {
 		
 		System.out.println("Q no-21:"+getLastFiveChar("This is a String"));
 		
+		System.out.println("Q no-22:"+getFirstFiveChar("this is a String"));
+		
+		System.out.println("Q no-23:"+ getFifthToTenthChar("This is a String"));
 		
 		
 		
 		
 		
+		
+	}
+	/**
+	 * Q no:23
+	 * write a method that take one String input and return fifth to tenth character as a String
+	 * parameter:String text
+	 * returnType:String
+	 * ServingBucket:variable
+	 */
+	public static String getFifthToTenthChar(String text){
+		String subsString = null;
+		
+	    subsString = text.substring(4, 10);
+		
+		return subsString;
+	}
+	/**
+	 * Q no:22
+	 * write a method that take one String input and return a list of first  five character
+	 * parameter:String text
+	 * returnType:ArrayList<Character>
+	 * ServingBucket:List
+	 */
+	public static ArrayList<Character> getFirstFiveChar(String text){
+		ArrayList<Character> charList = new ArrayList<Character>();
+		
+		for(int i = 0; i <= 4; i++){
+			charList.add(text.charAt(i));
+		}
+		return charList;
 	}
 	/**
 	 * Q no:21
