@@ -37,11 +37,116 @@ public class MethodPractice {
 		
 		System.out.println("Q no-24:"+ getWord("This is a String"));
 		
+		System.out.println("Q no-25: "+ getFirstWord("This is a String"));
+		
+		System.out.println("Q no-26:"+ getWord("This is a String", "is"));
+		
+		System.out.println("Q no-27:"+getCharCount("This is a String", 'a'));
+		
+		System.out.println("Q no-28:"+ searchSentence("This is a String", "is"));
+		
+		System.out.println("Q no-29:"+ getConsonantCount("This is a String"));
 		
 		
 		
 		
 		
+		
+	}
+	/**
+	 * Q no:29
+	 * write a method that take one String input and return the count of all consonant
+	 * parameter:String text
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getConsonantCount(String text){
+		int count = 0;
+		
+		String consonant = "bcdfghjklmnpqrstvwxyz";
+		text = text.toLowerCase();
+		
+		for(int i = 0; i < text.length(); i++){
+			String character = String.valueOf(text.charAt(i));
+			
+			if(consonant.contains(character)){
+				count = count +1;
+			}
+		}
+		return count;
+	}
+	/**
+	 * Q no:28
+	 * write a method that take one String & one word input and return true if that sentence contain given word 
+	 * otherwise return false
+	 * parameter:String text,String word
+	 * returnType:boolean
+	 * ServingBucket:variable
+	 */
+	public static boolean searchSentence(String text,String word){
+		boolean sentence = false;
+		
+		String[] wordArray = text.split(" ");
+		
+		for(int i = 0; i < wordArray.length;i++){
+			if(wordArray[i].equalsIgnoreCase(word)){
+				sentence = true;
+			}
+		}
+		return sentence;
+	}
+	/**
+	 * Q no:27
+	 * write a method that take one String and one character input and return the count of that given character
+	 * parameter:String text,char character
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getCharCount(String text,char character){
+		int count = 0;
+		text = text.toLowerCase();
+		character = Character.toLowerCase(character);
+		
+		for(int i = 0; i < text.length();i++){
+			if(text.charAt(i) == character){
+				count = count+1;
+			}
+		}
+		return count;
+	}
+	/**
+	 * Q no:26
+	 * write a method that take one String and one word input and return the count of that given word
+	 * parameter:String text,String word
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getWord(String text,String word){
+		int count = 0;
+		String[] wordArray = text.split(" ");
+		
+		for(int i = 0; i < wordArray.length; i++){
+			if(wordArray[i].equalsIgnoreCase(word)){
+				count = count+1;
+			}
+		}
+		return count;
+	}
+	/**
+	 * Q no:25
+	 * write a method that take one String input and return first word
+	 * parameter:String text
+	 * returnType:String
+	 * ServingBucket:variable
+	 */
+	public static String getFirstWord(String text){
+		String message = null;
+		
+		String[] wordArray = text.split(" ");
+		
+		message = wordArray[0];
+		
+		return message;
 	}
 	/**
 	 * Q no:24
