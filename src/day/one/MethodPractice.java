@@ -47,11 +47,101 @@ public class MethodPractice {
 		
 		System.out.println("Q no-29:"+ getConsonantCount("This is a String"));
 		
+		System.out.println("Q no-30:"+ getVowels("This is a String"));
+		
+		System.out.println("Q no- 31:"+ getUpperCaseChar("This is A String"));
+		
+		System.out.println("Q no-32:"+getCgahCountWithoutWhitespace("This is a String"));
+		
+		System.out.println("Q no-33:"+ getRepeatedChar("This is a String"));
 		
 		
 		
 		
 		
+	}
+	/**
+	 * Q no:33
+	 * write a method that take one String input and return all repeated character without whitespace
+	 * parameter:String text
+	 * returnTYpe:String
+	 * ServingBucket:variable
+	 */
+	public static String getRepeatedChar(String text){
+		String repeatedChar = "";
+		
+		text = text.replaceAll(" ", "");
+		text = text.toLowerCase();
+		
+		for(int i = 0; i < text.length(); i++){
+			for(int j = i+1; j < text.length();j++){
+				
+				if(text.charAt(i) == text.charAt(j)){
+					String Character = String.valueOf(text.charAt(i));
+					
+					if(! repeatedChar.contains(Character)){
+						repeatedChar = repeatedChar + text.charAt(i);
+					}
+				}
+				
+			}
+		}
+		
+		return repeatedChar;
+	}
+	/**
+	 * Q no:32
+	 * write a method that take one String input and return the count of character without whitespace
+	 * parameter:String text
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int  getCgahCountWithoutWhitespace(String text){
+		int charCount = 0;
+		text = text.replaceAll(" ", "");
+		
+		charCount = text.length();
+	
+		return charCount;
+	}
+	/**
+	 * Q no :31
+	 * write a method that take one String input and return the count of all upper case Character
+	 * parameter:String text
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getUpperCaseChar(String text){
+		int charCount = 0;
+		
+		for(int i = 0; i < text.length(); i++){
+			 if(Character.isUpperCase(text.charAt(i))){
+				 charCount = charCount +1;
+			 }
+		}
+		return charCount;
+	}
+	/**
+	 * Q no:30
+	 * write a method that take one String input and return the count of all vowels
+	 * parameter:String text
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getVowels(String text){
+		int count = 0;
+		
+		String vowel = "aeiou";
+		text = text.toLowerCase();
+		
+		for(int i = 0; i < text.length();i++){
+			String character = String.valueOf(text.charAt(i));
+			
+			if(vowel.contains(character)){
+				count = count+1;
+			}
+		}
+		return count;
 	}
 	/**
 	 * Q no:29
