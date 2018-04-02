@@ -55,10 +55,40 @@ public class MethodPractice {
 		
 		System.out.println("Q no-33:"+ getRepeatedChar("This is a String"));
 		
+		System.out.println("Q no-34:"+ getUniqueChar("This is a String"));
 		
 		
 		
 		
+		
+	}
+	/**
+	 * Q no:34
+	 * write a method that take one String input and return all the unique character without whitespace
+	 * parameter:String text
+	 * returnType:String
+	 * ServingBucket:variable
+	 */
+	public static String getUniqueChar(String text){
+		String uniqueChar = "";
+		
+		text = text.replaceAll(" ", "");
+		text = text.toLowerCase();
+		
+		for(int i = 0; i < text.length();i++){
+			for(int j = i+1; j < text.length(); j++){
+				
+				if(text.charAt(i) == text.charAt(j)){
+					String Character = String.valueOf(text.charAt(i));
+					
+					if(uniqueChar.contains(Character)){
+						uniqueChar = uniqueChar.replaceAll(Character, "");
+						break;
+					}
+				}
+			}
+		}
+		return uniqueChar;
 	}
 	/**
 	 * Q no:33
