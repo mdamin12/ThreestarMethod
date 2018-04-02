@@ -78,9 +78,44 @@ public class MethodPractice {
 		numList.add(40);
 		System.out.println("Q no-38:"+Arrays.toString(getConvertedListToArray(numList)));
 		
+		int[] numArray = { 20,30,40,50,60};
+		System.out.println("Q no-39:"+getConvertedArrayToList(numArray));
+		
+		int[] numberArrayFour = { 50,30,10,40,55,80};
+		System.out.println("Q no-40:"+Arrays.toString(getSortedArray(numberArrayFour)));
 		
 		
 		
+		
+	}
+	/**
+	 * write a method that take one number array input and return the sorted array
+	 * parameter:int[] numberArray
+	 * returnType:int[]
+	 * ServingBucket:array
+	 */
+	public static int[] getSortedArray(int[] numberArray){
+		int[] sortedArray = new int[numberArray.length];
+		
+		Arrays.sort(numberArray);
+		sortedArray = numberArray;
+		
+		return sortedArray;
+	}
+	/**
+	 * Q no:39
+	 * write a method that take one number Array input then convert that to a list and return list
+	 * parameter:int[] numArray
+	 * returnType:ArrayList<Integer>
+	 * ServingBucket:List
+	 */
+	public static ArrayList<Integer> getConvertedArrayToList(int[] numArray){
+		ArrayList<Integer> numberList = new ArrayList<Integer>();
+		
+		for(int i = 0; i < numArray.length;i++){
+			numberList.add(numArray[i]);
+		}
+		return numberList;
 	}
 	/**
 	 * Q no:38
