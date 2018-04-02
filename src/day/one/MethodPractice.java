@@ -57,10 +57,92 @@ public class MethodPractice {
 		
 		System.out.println("Q no-34:"+ getUniqueChar("This is a String"));
 		
+		int[] numberArrayThree ={ 10,20,30,40,45};
+		System.out.println("Q no-35:"+ getSum(numberArrayThree));
+		
+		ArrayList<Integer> numberList = new ArrayList<Integer>();
+		numberList.add(10);
+		numberList.add(20);
+		numberList.add(30);
+		numberList.add(40);
+		numberList.add(50);
+		System.out.println("Q no-36:"+getSum(numberList));
+		
+		System.out.println("Q no-37:"+getReverseString("This is a String"));
+		
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+		numList.add(15);
+		numList.add(10);
+		numList.add(25);
+		numList.add(35);
+		numList.add(40);
+		System.out.println("Q no-38:"+Arrays.toString(getConvertedListToArray(numList)));
 		
 		
 		
 		
+	}
+	/**
+	 * Q no:38
+	 * write a method that take that one number list input then convert that to an Array and return that Array
+	 * parameter:ArrayList<Integer>numList
+	 * returnType;int[]
+	 * ServingBucket:array
+	 */
+	public static int[] getConvertedListToArray(ArrayList<Integer> numList){
+		int[] numberArray = new int[numList.size()];
+		
+		for(int i = 0; i < numList.size(); i++){
+			numberArray[i] = numList.get(i);
+		}
+		return numberArray;
+	}
+	
+	/**
+	 * Q no:37
+	 * write a method that take one String input and return same String in reverse order
+	 * parameter:String text
+	 * returnType:String
+	 * ServingBucket:variable
+	 */
+	public static String getReverseString(String text){
+		String reverseString = "";
+		
+		for(int i = text.length()-1; i >= 0; i--){
+			reverseString = reverseString + text.charAt(i);
+		}
+		return reverseString;
+	}
+	/**
+	 * Q no:36
+	 * write a method that take one integer type list input and return sum of all values
+	 * parameter:ArrayList<Integer> numberList
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getSum(ArrayList<Integer> numberList){
+		int sum = 0;
+		
+		for(int i = 0; i < numberList.size(); i++){
+			sum = sum + numberList.get(i);
+		}
+		return sum;
+	}
+	
+	/**
+	 * Q no:35
+	 * write a method that take one integer type array input and return sum of all values
+	 * parameter:int[] numberArray
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getSum(int[] numberArray){
+		int sum = 0;
+		
+		for(int i = 0; i < numberArray.length; i++){
+			sum = sum + numberArray[i];
+		}
+		return sum;
 	}
 	/**
 	 * Q no:34
