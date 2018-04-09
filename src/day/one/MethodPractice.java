@@ -2,6 +2,7 @@ package day.one;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MethodPractice {
 	
@@ -84,11 +85,176 @@ public class MethodPractice {
 		int[] numberArrayFour = { 50,30,10,40,55,80};
 		System.out.println("Q no-40:"+Arrays.toString(getSortedArray(numberArrayFour)));
 		
+		ArrayList<Integer> numberListTwo = new ArrayList<Integer>();
+		numberListTwo.add(50);
+		numberListTwo.add(80);
+		numberListTwo.add(90);
+		numberListTwo.add(30);
+		numberListTwo.add(20);
+		System.out.println("Q no-41:"+ getSortedList(numberListTwo));
+		
+		int[] numberArrayFive = { 10,40,50,60,30,80,35};
+		System.out.println("Q no-42:"+Arrays.toString(getBubbleSorted(numberArrayFive)));
+		
+		System.out.println("Q no-43:"+ getContainValue("This is a String wich contain 30"));
+		
+		System.out.println("Q no-44:"+getNumListFromString("This 30 is a 50 which contain 40"));
+		
+		System.out.println("Q no-45:"+ getEmail("This is a alamin.hawlader69@gmail.com which contain 40"));
+		
+		System.out.println("Q no-46:"+ getAlternateChar("This is a String"));
+		
+		System.out.println("Q no-47:"+ getAlernativeChar("This is a String"));
+		
 		
 		
 		
 	}
 	/**
+	 * Q no:47
+	 * write a method that take one String input and return the same String by making upperCase of all alternative 
+	   characters and rest of the characters in lowerCase
+	 * parameter:String text
+	 * returnTYpe:String
+	 * ServingBucket:variable
+	 */
+	public static String getAlernativeChar(String text){
+		String alternativeChar = "";
+		
+		for(int i = 0; i < text.length(); i++){
+			
+			if(i % 2 == 0){
+				alternativeChar = alternativeChar + Character.toUpperCase(text.charAt(i));
+				
+			}else if(i % 2 == 1){
+				alternativeChar = alternativeChar +  Character.toLowerCase(text.charAt(i));
+			}
+		}
+		
+		return alternativeChar;
+	}
+	/**
+	 * Q no:46
+	 * write a method that take one String input and return the alternate characters as a String
+	 * parameter:String text
+	 * returnType:String
+	 * ServingBucket:variable
+	 */
+	public static String getAlternateChar(String text){
+		String alternateChar = "";
+		
+		for(int i = 0; i < text.length(); i= i+2){
+			alternateChar = alternateChar + text.charAt(i);
+		}
+		return alternateChar;
+	}
+	/**
+	 * Q no:45
+	 * write a method that take one String input which contain an email address then collect and return that email
+	 * parameter:String text
+	 * returnType:String
+	 * ServingBucket:variable
+	 */
+	public static String getEmail(String text ){
+		String email = null;
+		
+		String[] wordArray = text.split(" ");
+		
+		for(int i = 0; i < wordArray.length; i++){
+			
+			if(wordArray[i].matches("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+")){
+				
+			email = wordArray[i];
+			}
+		}
+		
+		return email;
+	}
+	/**
+	 * Q no:44
+	 * write a method that take one String input which contain multiple number then collect and return in a list
+	 * parameter:String number
+	 * returnType:ArrayList<Integer>
+	 * ServingBucket:List
+	 */
+	public static ArrayList<Integer> getNumListFromString(String number){
+		ArrayList<Integer> numList = new ArrayList<Integer>();
+		
+		String[] wordArray = number.split(" ");
+		for(int i = 0; i < wordArray.length; i++){
+			
+			if(wordArray[i].matches("[0-9]+")){
+				int num = Integer.valueOf(wordArray[i]);
+				
+				numList.add(num);
+			}
+		}
+		return numList;
+	}
+	/**
+	 * Q no:43
+	 * write a method that take one String input which contains a number and return that number as integer
+	 * parameter:String number
+	 * returnType:int
+	 * ServingBucket:variable
+	 */
+	public static int getContainValue(String number){
+		int containValue = 0;
+		
+		String[] wordArray = number.split(" ");
+		
+		for(int i = 0; i < wordArray.length; i++){
+			
+			 if(wordArray[i].matches("[0-9]+")){
+				 int num = Integer.valueOf(wordArray[i]);
+				 containValue = num;
+			 }
+		}
+		return containValue;
+	}
+	/**
+	 * Q no:42
+	 * write a method that take one number array input and return the bubble sorted array
+	 * parameter:int[] numberArray
+	 * returnType:int[]
+	 * ServingBucket:arry
+	 */
+	public static int[] getBubbleSorted(int[] numberArray){
+		int[] bubbleSortedArray = new int[ numberArray.length];
+		
+		for(int i = 0; i < numberArray.length; i++){
+			for(int j = i+1; j < numberArray.length; j++){
+				
+				if(numberArray[i] < numberArray[j]){
+					int sortedValue = numberArray[i];
+					
+					numberArray[i] = numberArray[j];
+					numberArray[j] = sortedValue;
+				}
+				
+			}
+		}
+		bubbleSortedArray = numberArray;
+		
+		return bubbleSortedArray;
+	}
+	/**
+	 * Q no:41
+	 * write a method that one number List input and return the sorted List
+	 * parameter:ArrayList<Integer> numberList
+	 * returnType:ArrayList<Integer>
+	 * ServingBucket:List
+	 */
+	public static ArrayList<Integer> getSortedList(ArrayList<Integer> numberList){
+		ArrayList<Integer> sortedList = new ArrayList<Integer>();
+		
+		Collections.sort(numberList);
+		sortedList = numberList;
+		
+		return sortedList;
+	}
+	/**
+	 * Q no:40
 	 * write a method that take one number array input and return the sorted array
 	 * parameter:int[] numberArray
 	 * returnType:int[]
